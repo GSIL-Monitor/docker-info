@@ -1,1 +1,3 @@
-docker run -d --name my-rabbitmq -p 6671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25672 -p 15671:15671 -p 15672:15672 rabbitmq
+# pull带有web管理的rabbitmq 如果不需要可以直接pull lastest版本
+docker pull docker.io/rabbitmq:3.7.0-management
+docker run -d --name my-rabbitmq -p 6671:5671 -p 5672:5672 -p 4369:4369 -p 25672:25672 -p 15671:15671 -p 15672:15672 rabbitmq:3.7.0-management
