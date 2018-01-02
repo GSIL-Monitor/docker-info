@@ -1,0 +1,14 @@
+docker pull gitlab/gitlab-ce:latest
+
+docker run  -it --detach \
+    --hostname gitlab.tfchen.com \
+    --privileged=true \
+    --publish 443:443 --publish 80:80 --publish 5211:22 \
+    --name gitlab \
+    --volume /home/gitlab/config:/etc/gitlab \
+    --volume /home/gitlab/logs:/var/log/gitlab \
+    --volume /home/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest
+
+#如果遇到ipv4路由问题
+sysctl -w net.ipv4.ip_forward=1
