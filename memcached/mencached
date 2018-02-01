@@ -1,0 +1,2 @@
+docker pull docker.io/memcached
+docker run --name mencached -p 11211:11211 -d docker.io/memcached -m 64

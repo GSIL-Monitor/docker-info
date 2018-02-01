@@ -1,0 +1,2 @@
+# 查看容器信息 含容器ip
+docker inspect b6b12f1b44a7
