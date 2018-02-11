@@ -1,2 +1,7 @@
 # 查看容器信息 含容器ip
 docker inspect b6b12f1b44a7
+
+# 修改仓库地址
+centos 7
+vi /etc/docker/daemon.json
+{"insecure-registries":["172.32.1.78:15005"]}
