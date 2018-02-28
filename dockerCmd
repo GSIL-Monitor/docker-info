@@ -5,3 +5,7 @@ docker inspect b6b12f1b44a7
 centos 7
 vi /etc/docker/daemon.json
 {"insecure-registries":["172.32.1.78:15005"]}
+
+
+docker images |grep 5000/lianlian|awk '{print $3}'|xargs docker rmi -f
+sudo docker ps -a |grep Exited|awk '{print $1}'|xargs sudo docker rm
