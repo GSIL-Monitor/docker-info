@@ -10,4 +10,4 @@ docker run -d -p 8878:7878 -p8879:7879 \
 	-v /home/users/yanhao/mps2/log:/home/log \
 	172.32.1.78:15000/lianlian/mps:latest
 
-docker run -d -p 30102:8080 172.32.1.54:5000/lianlian/llbrain-dlp-backend:1.0.0.9
+docker run -d -p 30102:8080 172.32.1.54:5000/chentf/ccc-dlp-backend:1.0.0.9
