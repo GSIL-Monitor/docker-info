@@ -1,0 +1,1 @@
+docker run -it -d -p 2379:2379 -p 4001:4001 docker.io/elcolio/etcd
