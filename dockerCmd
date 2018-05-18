@@ -4,8 +4,8 @@ docker inspect b6b12f1b44a7
 # 修改仓库地址
 centos 7
 vi /etc/docker/daemon.json
-{"insecure-registries":["172.32.1.78:15005"]}
+{"insecure-registries":["172.32.1.XX:XXXXXX"]}
 
 
-docker images |grep 5000/lianlian|awk '{print $3}'|xargs docker rmi -f
+docker images |grep 15000/tfchen|awk '{print $3}'|xargs docker rmi -f
 sudo docker ps -a |grep Exited|awk '{print $1}'|xargs sudo docker rm
