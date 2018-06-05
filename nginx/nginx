@@ -1,1 +1,9 @@
 docker run --name nginx -p 80:80 -d docker.io/nginx
+
+
+
+docker cp 66fc3df59bc5:/etc/nginx/nginx.conf /home/users/developer/docker/nginx/nginx.conf
+docker cp 66fc3df59bc5:/etc/nginx/conf.d/ /home/users/developer/docker/nginx/conf.d/
+
+
+docker run --name nginx -p 80:80 -v /home/users/developer/docker/nginx/conf.d/:/etc/nginx/conf.d/ -v /home/users/developer/docker/nginx/nginx.conf:/etc/nginx/nginx.conf   -d docker.io/nginx
