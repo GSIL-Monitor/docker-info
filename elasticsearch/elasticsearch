@@ -1,0 +1,29 @@
+docker search elasticsearch
+docker pull elasticsearch:6.4.2
+docker pull elasticsearch:5.4.0
+docker pull elasticsearch:2.3.5
+#springboot和es有严格的版本限制
+
+docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch elasticsearch:5.4.0
+docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch elasticsearch:2.3.5
+
+
+docker run -d -p 9200:9200 --name elasticsearch5 elasticsearch:5.4.0
+docker run -d -p 9200:9200 --name elasticsearch6 elasticsearch:6.4.2
+
+
+
+http://localhost:9200/
+
+
+elasticsearch-5.6.3 /config 文件中 vi elasticsearch.yml
+
+文件下添加 ：
+
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+
+docker pull mobz/elasticsearch-head:5
+
+docker run -d -p 9100:9100 --name elasticsearch-head mobz/elasticsearch-head:5
