@@ -22,3 +22,7 @@ docker cp  96f7f14e99ab:/www /tmp/
 
 #获取所有容器的ip
 docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
+
+#进入容器
+docker attach cid
+docker exec -it cid bash

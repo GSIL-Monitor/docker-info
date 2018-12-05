@@ -1,0 +1,2 @@
+docker pull centos:7
+docker run -d -i -t --name centos7 centos:7 bin/bash

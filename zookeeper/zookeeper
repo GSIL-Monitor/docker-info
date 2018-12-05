@@ -10,3 +10,6 @@ docker-compose ps
 
 参考资料
 https://blog.csdn.net/wwh578867817/article/details/52553785?locationNum=12
+
+集群
+COMPOSE_PROJECT_NAME=zk docker-compose up -d
