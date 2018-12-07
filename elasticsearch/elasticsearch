@@ -9,6 +9,8 @@ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch elasticsearch:2.3.5
 
 
 docker run -d -p 9200:9200 --name elasticsearch5 elasticsearch:5.4.0
+docker run -d -p 9200:9200 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" --name elasticsearch6 elasticsearch:6.4.2
+
 #默认是1g
 docker run -d -p 9200:9200 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" --name elasticsearch6_1 elasticsearch:6.4.2
 docker run -d -p 9210:9200 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" --name elasticsearch6_2 elasticsearch:6.4.2

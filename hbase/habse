@@ -1,0 +1,16 @@
+极速hbase
+https://www.elastic.co/guide/en/elasticsearch/reference/current/parent-join.html
+
+docker pull bolingcavalry/centos7-hbase126-standalone:0.0.1
+
+docker run --name=hbase001 -p 60010:60010 -p9090:9090 -idt bolingcavalry/centos7-hbase126-standalone:0.0.1
+
+docker exec -it hbase001 /bin/bash
+#启动thrift
+/usr/local/work/hbase/bin/hbase-daemon.sh start thrift
+
+
+#启动服务
+/usr/local/work/hbase/bin/start-hbase.sh
+
+/usr/local/work/hbase/bin/hbase-daemon.sh start thrift
