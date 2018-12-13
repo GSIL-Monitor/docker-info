@@ -1,1 +1,37 @@
 docker run -p 8000:8000 -d --name jupyterhub jupyterhub/jupyterhub jupyterhub
+
+
+useradd jupyter
+passwd jupyter
+
+yum install -y bzip2
+sh Anaconda3-5.3.1-Linux-x86_64.sh
+
+--soft
+1 安装cona
+source /root/.bashrc
+2 安装jupyterhub
+conda install -c conda-forge jupyterhub
+3 安装jupyterbook
+conda install notebook
+
+conda install elasticsearch
+
+创建 配置文件
+jupyterhub --generate-config
+
+修改bindingUrl
+
+4 启动
+sudo jupyterhub -f /home/jupyter/app/jupyterhub_config.py --no-ssl
+nohup sudo jupyterhub -f /home/jupyter/app/jupyterhub_config.py --no-ssl > jupyterhub.log &
+
+sudo jupyterhub -f /home/jupyter/jupyterhub/jupyterhub_config.py --no-ssl
+sudo /home/jupyter/anaconda3/bin/jupyterhub -f /home/jupyter/jupyterhub/jupyterhub_config.py --no-ssl
+nohup sudo jupyterhub -f /home/jupyter/jupyterhub/jupyterhub_config.py --no-ssl > jupyterhub.log &
+添加用户
+添加密码
+添加目录
+共同组
+chmod 755
+visudo 添加环境变量
