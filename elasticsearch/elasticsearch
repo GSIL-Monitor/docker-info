@@ -11,6 +11,9 @@ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch elasticsearch:2.3.5
 docker run -d -p 9200:9200 --name elasticsearch5 elasticsearch:5.4.0
 docker run -d -p 9200:9200 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" --name elasticsearch6 elasticsearch:6.4.2
 
+
+docker run -d -p 9200:9200 --name elasticsearch6 elasticsearch:6.4.2
+
 #默认是1g
 docker run -d -p 9200:9200 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" --name elasticsearch6_1 elasticsearch:6.4.2
 docker run -d -p 9210:9200 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" --name elasticsearch6_2 elasticsearch:6.4.2
@@ -34,3 +37,29 @@ discovery.zen.ping.unicast.hosts: ["172.17.0.4:9300", "172.17.0.2:9300","172.17.
 docker pull mobz/elasticsearch-head:5
 
 docker run -d -p 9100:9100 --name elasticsearch-head mobz/elasticsearch-head:5
+
+docker pull kibana:6.4.2
+
+docker run -d
+
+/usr/share/elasticsearch/config/elasticsearch.yml
+
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+node.name: fbi-es-node01
+discovery.zen.minimum_master_nodes: 1
+discovery.zen.ping.unicast.hosts: ["fbi-es-node01:9300", "fbi-es-node02:9300","fbi-es-node03:9300"]
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+log4j2.properties
+
+
+
+ES_JAVA_OPTS -Xms4096m -Xmx4096m
+
+/usr/share/elasticsearch/customer/config
+
+
+docker pull dockerhub.test.wacai.info/cn.fudata.fbi.images/elasticsearch-plus:6.4.2-customer
+

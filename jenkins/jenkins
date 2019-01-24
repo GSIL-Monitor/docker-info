@@ -1,0 +1,7 @@
+docker pull jenkins
+
+docker run --name myjenkins -p 8080:8080  jenkins
+
+镜像站点
+http://mirror.xmission.com/jenkins/updates/update-center.json
+
