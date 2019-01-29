@@ -1,0 +1,5 @@
+docker pull arangodb:3.4.0
+
+docker run -e ARANGO_RANDOM_ROOT_PASSWORD=1 -p 8529:8529 -d --name arango arangodb:3.4.0
+
+docker tag arangodb:3.4.0 dockerhub.test.wacai.info/cn.fudata.fbi.images/arangodb:3.4.0

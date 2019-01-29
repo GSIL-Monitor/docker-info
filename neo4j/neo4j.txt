@@ -1,0 +1,8 @@
+docker pull neo4j:3.5-enterprise
+
+docker run \
+    --publish=7474:7474 --publish=7687:7687 \
+    --volume=$HOME/neo4j/data:/data \
+    neo4j:3.5-enterprise
+
+docker run -d --name neo4j -p 7474:7474 -p 7687:7687 --env=NEO4J_ACCEPT_LICENSE_AGREEMENT=yes neo4j:3.5-enterprise

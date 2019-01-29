@@ -29,5 +29,8 @@ docker exec -it cid bash
 
 #制作镜像
 docker build -t dockerhub.test.wacai.info/cn.fudata.fbi.images/elasticsearch-plus:6.4.2-customer .
+docker build -t dockerhub.test.wacai.info/cn.fudata.fbi.images/kibana-plus:6.4.2-customer .
 
+#镜像重命名
+docker tag neo4j:3.5-enterprise dockerhub.test.wacai.info/cn.fudata.fbi.images/neo4j:3.5-enterprise
 sleep 10000
